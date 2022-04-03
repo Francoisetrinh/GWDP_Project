@@ -1,0 +1,48 @@
+.my_products {
+  font-family: 'Lovers Quarrel', cursive;
+  font-weight: 900;
+  font-size: 3em;
+  text-align: center;
+}
+
+.tableProducts {
+  width: 100%;
+  text-align: center;
+}
+
+.tableProductsHeadColumn {
+  width: 50px;
+}
+
+.tableProductsHeadRow {
+  background: #8f3744;
+}
+
+.tableProductsMainRow {
+  background: #fec2b7;
+}
+
+.tableProductsMainion-icon {
+  color: white;
+}
+
+.clientsTitle {
+  font-family: 'Lovers Quarrel', cursive;
+  font-weight: 900;
+  font-size: 3em;
+  text-align: center;
+}
+
+.clientsTable {
+  width: 100%;
+  text-align: center;
+}
+
+.clientsTableHeadRow {
+  background: #8f3744;
+}
+
+.clientsTableHeadColumn {
+  width: 60px;
+}
+/*# sourceMappingURL=admin.css.map */

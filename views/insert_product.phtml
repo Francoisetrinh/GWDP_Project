@@ -1,0 +1,42 @@
+
+<!-- Vue de ma formulaire de l'admin pour l'insertion -->
+
+<h2>Insertion des produits</h2>
+<section>
+  <form  method="POST">
+    <input type="hidden" name="token" value='<?php echo $token ?>' >
+    <fieldset>
+      <legend>Forme générale</legend>
+      <label for="modelGeneralTitle"><b>Titre</b></label>
+        <input id="modelGeneralTitle" type="text" placeholder="title" name="modelGeneralTitle" ><br>
+      <label for="modelGeneralDescription"><b>Description</b></label>
+        <input id="modelGeneralDescription" type="text" placeholder="description" name="modelGeneralDescription" ><br>
+      <label for="modelGeneralPrice"><b>Prix</b></label>
+        <input id="modelGeneralPrice" type="text" placeholder="price" name="modelGeneralPrice" ><br>
+      <label for="modelGeneralCoefficient"><b>Coefficient</b></label>
+        <input id="modelGeneralCoefficient" type="text" placeholder="coefficient" name="modelGeneralCoefficient" ><br>
+    </fieldset>
+    <fieldset>
+      <legend>Forme générale arrière</legend>
+      <label for="backModelGeneralTitle"><b>Titre</b></label>
+        <input id="backModelGeneralTitle" type="text" placeholder="title" name="backModelGeneralTitle" ><br>
+      <label for="backModelGeneralDescription"><b>Description</b></label>
+        <input id="backModelGeneralDescription" type="text" placeholder="description" name="backModelGeneralDescription" ><br>
+      <label for="backModelGeneralPrice"><b>Prix</b></label>
+        <input id="backModelGeneralPrice" type="text" placeholder="price" name="backModelGeneralPrice" ><br>
+      <label for="backModelGeneralCoefficient"><b>Coefficient</b></label>
+        <input id="backModelGeneralCoefficient" type="text" placeholder="coefficient" name="backModelGeneralCoefficient" ><br>
+    </fieldset>
+    <fieldset>
+      <legend>Options</legend>
+        <label for="optionsTitle"><b>Titre</b></label>
+          <input id="optionsTitle" type="text" placeholder="title" name="optionsTitle" ><br>
+        <label for="optionsDescription"><b>Description</b></label>
+          <input id="optionsDescription" type="text" placeholder="description" name="optionsDescription" ><br>
+        <label for="optionsPrice"><b>Prix</b></label>
+          <input id="optionsPrice" type="text" placeholder="price" name="optionsPrice" ><br>
+        <label for="optionsCoefficient"><b>Coefficient</b></label>
+          <input id="optionsCoefficient" type="text" placeholder="coefficient" name="optionsCoefficient" ><br>
+      </fieldset>
+  <button type="submit" name="submit"  id='submit' value='submit'>Enregistrer</button>
+</section>

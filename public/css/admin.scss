@@ -1,0 +1,47 @@
+.my_products{
+    font-family: 'Lovers Quarrel', cursive;
+    font-weight: 900;
+    font-size: 3em;
+    text-align: center;
+}
+.tableProducts{
+    width: 100%;
+    text-align: center;
+    &Head{
+        &Column{
+            width: 50px;
+        }
+        &Row{
+           background: rgb(143,55,68) ; 
+        }
+    }
+    &Main{
+        &Row{
+            background: rgb(254,194,183);
+        }
+        &ion-icon{
+            color: white;
+        }
+    } 
+}
+
+.clientsTitle{
+    font-family: 'Lovers Quarrel', cursive;
+    font-weight: 900;
+    font-size: 3em;
+    text-align: center;
+}
+
+.clientsTable{
+    width: 100%;
+    text-align: center;
+    &Head{
+        &Row{
+            background: rgb(143,55,68) ; 
+         }
+        &Column{
+            width: 60px;
+        }
+
+    }
+}

@@ -1,0 +1,144 @@
+/* couleurs globales
+
+*/
+
+body{
+    margin:0px;
+    background: url('../img/ring-wedding.jpg') no-repeat; 
+    background-attachment: fixed; 
+    min-height: 120vh;  
+}
+
+header {
+    background-color: rgb(0, 81, 55);
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 15px;
+    justify-items: center;
+    justify-content: space-around;
+    a { 
+        margin:0px;
+        img{
+        border-radius: 80px;
+        width: 100px;
+        height: 100px;
+        }
+    }
+
+    ul {
+        background-color: rgb(0, 81, 55);
+        display:flex;  
+        .nav-link {
+            background-color: rgb(0, 81, 55);       
+            color:ghostwhite;
+            font-family: 'Lovers Quarrel', cursive;
+            padding: 10px;
+            margin: 0px;
+            justify-content: center;
+            align-items: stretch;
+            text-align: center;  
+            text-decoration: none;
+            font-size: 2em;
+        }
+    }
+}
+
+main{
+    height: 100vh;
+    padding: 10px;  
+    margin:10px; 
+    background-color: rgba(255, 255, 255, 0.678);
+    h1{
+        font-family: 'Calligraffitti', cursive;
+    }
+    .avatar{
+        width: 150px;
+        height: 150px;
+    }
+    img{
+        width: 100%;
+        // height: 350px;
+        object-fit: cover;
+        object-position: top;
+    }
+   
+}
+
+footer {
+    background-color: rgb(0, 81, 55);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    a{
+        text-decoration: none;
+        color:ghostwhite;
+        font-family: 'Lovers Quarrel', cursive;
+        justify-content: center;
+        align-items: stretch;
+        text-align: center;  
+        font-size: 30px;
+
+    }
+}
+
+/////////////// Premier point de rupture à 600px////////////////
+@media screen AND (min-width:600px) {
+    body{
+        max-height: 120vh;  
+    }
+
+    header {
+        display:flex;
+        justify-items: center;
+        justify-content: space-around;
+        max-height: 200px;
+        img{
+            border-radius: 100px;
+            width: 150px;
+            height: 150px;
+        }
+        ul {
+            background-color: rgb(0, 81, 55);
+            display:flex;  
+            max-height: 150px;   
+            .nav-link {
+                margin: 0px;
+                // font-size: 3em;
+                max-height: 150px;
+            }
+        }
+    }
+}
+
+main{
+    .slideshow-container{
+        max-width: 250px;
+        position: absolute;
+        margin: auto;
+        img{
+            float:center;
+        }
+    }
+  
+    .previous, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+}
+
+//////////////////Second point de rupture à 970px//////////////////

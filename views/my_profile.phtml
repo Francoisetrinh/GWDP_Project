@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="./public/css/user-account.css">
+
+<aside>
+    <a href="index.php?action=my_profile">Mon Profil</a>
+    <a href="index.php?action=edit_user">Modifier mon Profil</a>
+    <a href="#">Mes devis</a>
+    <a href="index.php?action=logout">Déconnexion</a>  
+</aside>
+<section class="welcome-user">
+    <h1 class="welcome">Bienvenue, <?php echo htmlspecialchars($oUser -> getFirstname() );?></h1>
+        <p id="welcome">Vous êtes connecté(e) à votre profil</p>
+
+    <h2 class="my_profile">Mon Profil</h2>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row">Nom</th>
+                <td><?php echo htmlspecialchars($oUser -> getName() );?></td>
+            </tr>
+            <tr>
+                <th scope="row">Prénom</th>
+                <td><?php echo htmlspecialchars($oUser -> getFirstname() ) ;?></td>
+            </tr>
+            <tr>
+                <th scope="row">Addresse postale</th>
+                <td><?php echo htmlspecialchars($oUser -> getAddress() ) ;?><td>
+            </tr>
+            <tr>
+                <th scope="row">Code postal</th>
+                <td><?php echo htmlspecialchars($oUser -> getPostalcode() ) ;?></td>            
+            </tr>
+            <tr>
+                <th scope="row">Ville</th>
+                <td><?php echo htmlspecialchars($oUser -> getCity() ) ;?></td>
+            </tr>
+            <tr>
+                <th scope="row">Téléphone</th>
+                <td><?php echo htmlspecialchars($oUser -> getPhone() ) ;?></td>
+            </tr>
+            </tr>
+            <tr>
+                <th scope="row">Nom d'utilisateur</th>
+                <td><?php echo htmlspecialchars($oUser -> getLogin() ) ;?></td>
+            </tr>
+            <!-- <tr>
+                <th scope="row">Mot de passe</th>
+                <td>//?php echo htmlspecialchars($oUser -> getPassword() ) ;?></td>            
+            </tr> -->
+        </tbody>
+    </table>
+    <button class="edit-button" type="submit" name="edit_registration"  id='submit' value='EDIT_REGISTRATION'><a href="index.php?action=edit_user">Modification</a></button>
+    </table>
+</section>

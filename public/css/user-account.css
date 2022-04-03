@@ -1,0 +1,137 @@
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 150vh;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+main aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #db8f9a;
+  font-family: 'Quattrocento Sans', sans-serif;
+  margin: 0;
+}
+
+main aside a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+  width: 100%;
+}
+
+main aside button {
+  width: 200px;
+  height: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section form {
+  background-color: #aacac2;
+  border: #8f3744 solid 3px;
+  margin: 20px 20px;
+  padding: 15px;
+  width: 750px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section form h1 {
+  color: #8f3744;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
+}
+
+section form b {
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+section form input {
+  margin: 5px;
+}
+
+section form button {
+  margin: 5px;
+}
+
+.welcome-user {
+  display: block;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-width: 750px;
+  margin-top: 50px;
+}
+
+.welcome-user #welcome {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.welcome-user h2 {
+  background-color: #005137;
+  padding: 20px;
+  margin: 0;
+}
+
+.welcome-user table {
+  background-color: #aacac2;
+  height: 600px;
+  border-style: dotted;
+  padding: 10px;
+}
+
+.welcome-user table th, .welcome-user table tr {
+  padding: 15px;
+}
+
+.welcome-user table .edit_button {
+  width: 50px;
+  height: 50px;
+}
+/*# sourceMappingURL=user-account.css.map */

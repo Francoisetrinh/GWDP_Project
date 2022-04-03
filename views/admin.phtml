@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="./public/css/admin.css">
+
+<!-- Vue de la page d'Admin pour le CRUD des produits -->
+
+<!-- Tableau des produits  -->
+<h2 class="my_products">Mes produits</h2>
+<table class="tableProducts">
+  <thead class="tableProductsHead">
+    <tr class="tableProductsHeadRow">
+      <th scope="col tableProductsHeadColumn">Titre</th>
+      <th scope="col tableProductsHeadColumn">Description</th>
+      <th scope="col tableProductsHeadColumn">Prix</th>
+      <th scope="col tableProductsHeadColumn">Coefficient</th>
+      <th scope="col tableProductsHeadColumn">Modifier</th>
+      <th scope="col tableProductsHeadColumn">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody class="tableProductsMain">
+    <?php foreach($aProducts as $oProductsTable) :?>
+    <tr class="tableProductsMainRow">
+      <th class="tableProductsMainHead" scope="row"><?= intval($oProductsTable -> getId())?></th>
+      <td class="tableProductsMainColumn"><?= htmlspecialchars($oProductsTable -> getTitle())?></td>
+      <td class="tableProductsMainColumn">Otto</td>
+      <td class="tableProductsMainColumn">@mdo</td>
+      <td class="tableProductsMainIcon"><a href="#"><ion-icon name="pencil-outline"></ion-icon</a></td>
+      <td class="tableProductsMainIcon"><a href="index.php?action=delete_product"><ion-icon name="trash-outline"></ion-icon></a></td>
+    </tr>
+    <?php endforeach ?>
+  </tbody>
+</table>
+
+<!-- Lien pour l'insertion de nouveau produit ou d'option  -->
+<div><a href="index.php?action=insert_product">Insertion produit ou option</a></div>
+
+<!-- Tableau des utilisateurs/clients -->
+<h2 class="clientsTitle">Listing Clients</h2>
+<table class="clientsTable">
+  <thead class="clientsTableHead">
+    <tr class="clientsTableHeadRow">
+      <th scope="col clientsTableHeadColumn">ID</th>
+      <th scope="col clientsTableHeadColumn">Nom</th>
+      <th scope="col clientsTableHeadColumn">Prénom</th>
+      <th scope="col clientsTableHeadColumn">Adresse</th>
+      <th scope="col clientsTableHeadColumn">Code postale</th>
+      <th scope="col clientsTableHeadColumn">Ville</th>
+      <th scope="col clientsTableHeadColumn">Téléphone</th>
+      <th scope="col clientsTableHeadColumn">Email</th>
+      <th scope="col clientsTableHeadColumn">Login</th>
+      <th scope="col tableProductsHeadColumn">Modifier</th>
+      <th scope="col tableProductsHeadColumn">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody class="tableProductsMain">
+    <?php foreach($aAllUsers as $oUsersTable) :?>
+    <tr class="tableProductsMainRow">
+      <th class="tableProductsMainHead" scope="row"><?= intval($oUsersTable -> getId())?></th>
+      <td class="tableProductsMainColumn"><?= htmlspecialchars($oUsersTable -> getName())?></td>
+      <td class="tableProductsMainColumn"><?= htmlspecialchars($oUsersTable -> getFirstname())?></td>
+      <td class="tableProductsMainColumn"><?= htmlspecialchars($oUsersTable -> getAddress())?></td>
+      <td class="tableProductsMainColumn"><?= htmlspecialchars($oUsersTable -> getPostalcode())?></td>
+      <td class="tableProductsMainColumn"><?= htmlspecialchars($oUsersTable -> getCity())?></td>
+      <td class="tableProductsMainColumn"><?= htmlspecialchars($oUsersTable -> getPhone())?></td>
+      <td class="tableProductsMainColumn"><?= htmlspecialchars($oUsersTable -> getEmail())?></td>
+      <td class="tableProductsMainColumn"><?= htmlspecialchars($oUsersTable -> getLogin())?></td>
+      <td class="tableProductsMainIcon"><a href="#"><ion-icon name="pencil-outline"></ion-icon</a></td>
+      <td class="tableProductsMainIcon"><a href="#"><ion-icon name="trash-outline"></ion-icon></a></td>
+    </tr>
+    <?php endforeach ?>
+  </tbody>
+</table>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

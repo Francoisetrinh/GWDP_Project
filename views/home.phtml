@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="./public/css/home.css">
+
+<div-layout>
+    <div  id="slider" class="slideshow-container">
+        <div class="elements">
+            <div class="slide fadeIn">
+                <img src="./public/img/heart_picture.jpg" alt="picture-heart">
+
+            </div>
+            <div class="slide fadeOut">
+                <img src="./public/img/picture_couple.jpg" alt="picture-couple">
+            </div>
+            <div class="slide fadeOut">
+                <img src="./public/img/beach_landscape.jpg" alt="landscape-beach">
+            </div>
+        </div> <!--end of class elements-->
+        <!-- <a class="previous">&#10094;</a>
+        <a class="next">&#10095;</a> -->
+    </div> <!--end of slideshow-->
+    <br>
+    <!-- Creation of circles -->
+    <div class= "circles">
+        <span class="circle" onclick="currentSlide(1)"></span>
+        <span class="circle" onclick="currentSlide(2)"></span>
+        <span class="circle" onclick="currentSlide(3)"></span>
+    </div>
+</div-layout>
+<h1 class="title">Concept de Robes de Mariée sur-mesure éco-responsable</h1>
+
+<div class="viewContainer">
+    <?php
+    foreach ($allProducts as $productItem) { ?>
+        <div class="card viewContainerProducts">  
+            <img src="<?php echo htmlspecialchars(DIR_PROD_IMG. '/' . $productItem->getImage())?>" alt="wedding dress">
+            <h2><?php echo htmlspecialchars($productItem->getTitle()) ?></h2>
+            <p class="price">1240€</p>
+            <!-- <p></p> -->
+            <div class="azerty viewContainerProductsButton">
+                <button>En savoir plus</button>
+            </div>
+        </div>
+    <?php } ?>
+</div>
+
+
+<script src="./public/js/home.js"></script>

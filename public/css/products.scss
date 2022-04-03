@@ -1,0 +1,67 @@
+.product{
+    display: flex;
+    flex-wrap: wrap;
+    width:50%;
+    &Main{
+       &Title{
+        font-family: 'Calligraffitti', cursive;
+        width: 100%;
+       } 
+    }
+    &Search{
+        &Finder{
+            display:flex;
+            &Button{
+                display: flex;
+            }
+        }
+    }
+    &Item{
+       &Form{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: space-around;
+            &Title{
+                font-family: 'Calligraffitti', cursive;
+                width: 100%;
+            }
+            &Image{
+                width: 250px;
+                height: 250px;
+            }
+            &Button{
+                width: 100%;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+.news{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: column;
+    align-content: flex-end;
+    width:90%;
+}
+
+.EventsLocation{
+    max-width: 300px;
+    padding-bottom: 10px;
+    text-align: center;
+    background: rgb(246, 236, 207);
+    border: solid 6px;
+    border-color: rgb(170, 202, 194);
+    &Image{
+        width:250px;
+    }
+    &Title{
+        padding: 15px;
+    }
+}
+

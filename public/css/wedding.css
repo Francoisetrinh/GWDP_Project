@@ -1,0 +1,172 @@
+/* couleurs globales
+
+*/
+body {
+  margin: 0px;
+  background: url("../img/ring-wedding.jpg") no-repeat;
+  background-attachment: fixed;
+  min-height: 120vh;
+}
+
+header {
+  background-color: #005137;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  padding: 15px;
+  justify-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header a {
+  margin: 0px;
+}
+
+header a img {
+  border-radius: 80px;
+  width: 100px;
+  height: 100px;
+}
+
+header ul {
+  background-color: #005137;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header ul .nav-link {
+  background-color: #005137;
+  color: ghostwhite;
+  font-family: 'Lovers Quarrel', cursive;
+  padding: 10px;
+  margin: 0px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+main {
+  height: 100vh;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.678);
+}
+
+main h1 {
+  font-family: 'Calligraffitti', cursive;
+}
+
+main .avatar {
+  width: 150px;
+  height: 150px;
+}
+
+main img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+footer {
+  background-color: #005137;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+footer a {
+  text-decoration: none;
+  color: ghostwhite;
+  font-family: 'Lovers Quarrel', cursive;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  text-align: center;
+  font-size: 30px;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    max-height: 120vh;
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    max-height: 200px;
+  }
+  header img {
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+  }
+  header ul {
+    background-color: #005137;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-height: 150px;
+  }
+  header ul .nav-link {
+    margin: 0px;
+    max-height: 150px;
+  }
+}
+
+main .slideshow-container {
+  max-width: 250px;
+  position: absolute;
+  margin: auto;
+}
+
+main .slideshow-container img {
+  float: center;
+}
+
+main .previous, main .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/*# sourceMappingURL=wedding.css.map */

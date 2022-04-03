@@ -1,0 +1,136 @@
+main {
+  height: 150vh;
+}
+
+/*** HOMEPAGE SLIDER FADEIN-FADEOUT***/
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut ease 3s;
+          animation: fadeOut ease 3s;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn ease 3s;
+          animation: fadeIn ease 3s;
+  opacity: 1;
+}
+
+/****** HOMEPAGE SLIDER POSITION *****/
+main {
+  min-height: 200vh;
+  margin: 10px 10px 0px 10px;
+}
+
+main .slideshow-container {
+  max-width: 2000px;
+  height: 700px;
+  position: relative;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .slideshow-container .elements {
+  width: 100%;
+}
+
+main .slideshow-container img {
+  width: 100%;
+  height: 700px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+main .slideshow-container .slide {
+  position: absolute;
+  width: 100%;
+}
+
+main h1 {
+  text-align: center;
+  color: #8f3744;
+  margin: 0px;
+}
+
+/******  HOMEPAGE CARD PRODUCTS *****/
+.viewContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 100px;
+          column-gap: 100px;
+  margin-top: 75px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.viewContainerProducts {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: grey;
+  max-width: 300px;
+  max-height: 550px;
+  text-align: center;
+  font-family: Quattrocento;
+}
+
+.viewContainerProductsButton {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: #aacac2;
+  text-align: center;
+  cursor: pointer;
+}
+
+.viewContainerProductsButton::hover {
+  color: #005137;
+}
+
+.price {
+  color: #831d2c;
+  font-size: 20px;
+}
+/*# sourceMappingURL=home.css.map */
