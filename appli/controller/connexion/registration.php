@@ -53,7 +53,6 @@ if (!empty($_POST))
             -> setPassword( password_hash($_POST['password'], PASSWORD_DEFAULT))
             ;
 
-            var_dump($oUser);
             $id = UserRepository::insertUser($oUser);
             // $oUserRepository->insertUser($oUser);
             header('Location:index.php?action=login');

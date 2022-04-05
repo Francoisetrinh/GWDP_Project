@@ -29,6 +29,10 @@ final class Product
     private int $coefficient;
 
     /**
+     *@var int $category */
+    private int $category;
+
+    /**
     * @param array $aProductData
     * @return void */
     public function hydrate(array $aProductData):self
@@ -39,6 +43,8 @@ final class Product
         -> setTitle($aProductData['title'])
         -> setPrice($aProductData['price'])
         -> setCoefficient($aProductData['coefficient'])
+        -> setDescription($aProductData['description'])
+        -> setCategory($aProductData['category_id'])
         ;
 
         return $this;
@@ -138,6 +144,30 @@ final class Product
     public function setPrice(int $price): self
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of category
+     *
+     * @return int
+     */
+    public function getCategory(): int
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set the value of category
+     *
+     * @param int $category
+     *
+     * @return self
+     */
+    public function setCategory(int $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
