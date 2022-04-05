@@ -1,7 +1,15 @@
 <?php
 
+use appli\repository\ProductsRepository;
+use appli\repository\CategoryRepository;
+use appli\entity\Product;
+
 // Variable valeur vide
 $product_id = '';
+
+// on créer l'instance Object Repository du Product
+$oPdo = new ProductsRepository();
+$oCategoryRepository = new CategoryRepository();
 
 // Création d'un tableau avec les clés.
 $product = [
@@ -13,23 +21,30 @@ $product = [
 ];
 
 $token = generateRandomString(30);
-$oUserSession -> setToken('insert_product', $token);
+
+$aCategories = $oCategoryRepository->getCategories();
 
 // Si post du formulaire, on vérifie les valeurs saisies.
-// if (!empty($_POST)) {
-//     $product = [
-//         'img' => $_POST['image'],
-//         'title' => $_POST['title'],
-//         'description'=> $_POST['description'],
-//         'price' => $_POST['price'],
-//         'coefficient' => $_POST['coefficient'],
-//     ];
-//     $oPdo->insertProduct($product);
-// }
-// var_dump($_POST);
+
 if(!empty($_POST) && $_POST['token'] == $oUserSession -> getToken('insert_product')) {
-    echo 'Ca fonctionne!';
+    $oProduct = new Product();
+
+    $product = [
+        'id' => 0,
+        'img' => '',
+        'title' => $_POST['modelGeneralTitle'],
+        'description'=> $_POST['modelGeneralDescription'],
+        'price' => $_POST['modelGeneralPrice'],
+        'coefficient' => $_POST['modelGeneralCoefficient'],
+        'category_id' => $_POST['modelGeneralCategory'],
+    ];
+
+    $oProduct->hydrate($product);
+
+    $oPdo->insertProduct($oProduct);
 }
+
+$oUserSession -> setToken('insert_product', $token);
 
 $sTitle = 'Insert new product';
 $sContent = 'insert_product';
