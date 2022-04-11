@@ -23,7 +23,7 @@
       <td class="tableProductsMainColumn">Otto</td>
       <td class="tableProductsMainColumn">@mdo</td>
       <td class="tableProductsMainIcon"><a href="#"><ion-icon name="pencil-outline"></ion-icon</a></td>
-      <td class="tableProductsMainIcon"><a href="index.php?action=delete_product"><ion-icon name="trash-outline"></ion-icon></a></td>
+      <td class="tableProductsMainIcon"><a href="index.php?action=delete_product&id=<?php echo intval($oProductsTable -> getId())?>"><ion-icon name="trash-outline"></ion-icon></a></td>
     </tr>
     <?php endforeach ?>
   </tbody>

@@ -51,6 +51,42 @@ class ProductsRepository
         return $aProducts;
     }
 
+    public function getProductsSearch(string $search, int $limit = 20): array
+    {
+        // $oPdo = PDOConnection::get();
+        // $query = $oPdo -> prepare('
+        $query = $this-> DB_pdo -> prepare('
+        SELECT
+        p_id AS id,
+        p_img AS img,
+        p_title AS title,
+        p_description AS description,
+        p_price AS price,
+        p_coefficient AS coefficient,
+        c_id AS category_id
+        FROM gwdp_products
+        WHERE p_title LIKE :search OR p_description LIKE :search
+        ORDER BY title DESC
+        LIMIT :limit
+        ');
+
+        // Passage de $limit en entier
+        $query -> bindValue(':limit', $limit, \PDO::PARAM_INT);
+        $query -> bindValue(':search', $search, \PDO::PARAM_STR);
+        $query -> execute();
+
+        $aProducts = [];
+        while ($aData = $query -> fetch(\PDO::FETCH_ASSOC)) {
+            // Création d'un objet
+            $oProduct = new Product();
+            $oProduct -> hydrate($aData);
+
+            $aProducts[] = $oProduct;
+        }
+        return $aProducts;
+    }
+
+
     /**
      * @param int $id
      * @return Product|NULL

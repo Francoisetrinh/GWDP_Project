@@ -12,16 +12,28 @@
   width: 100%;
 }
 
+.productSearch {
+  position: relative;
+}
+
 .productSearchFinder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.productSearchFinderButton {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.productSearchBar {
+  position: absolute;
+  background-color: gainsboro;
+  width: 100%;
+}
+
+.productSearchBar a {
+  display: block;
+  color: #005137;
+  text-decoration: none;
+  padding: 2px;
+  padding-left: 5px;
 }
 
 .productItemForm {

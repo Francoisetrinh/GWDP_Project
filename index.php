@@ -79,7 +79,9 @@ $action = array_key_exists('action', $_GET) ? $_GET['action'] : 'home';
         case 'products':
             require CONTROLLER_DIR . '/products/products.php';
             break;
-
+        case 'search_products':
+            require CONTROLLER_DIR . '/products/search_products.php';
+            break;
         default :
             header('Location:?action=home');
             exit;

@@ -178,7 +178,7 @@ class UserRepository
       (u_name, u_firstname, u_address, u_postalcode, u_city, u_phone, u_email,
       u_login, u_password, u_date)
     VALUES 
-      (:name,:firstname, :address, :postalcode, :city, :phone, :email, :login, :password, NOW() )
+      (:name,:firstname, :address, :postalcode, :city, :phone, :email, :login, :password, NOW() ) 
     ');
   
     $query -> execute([
