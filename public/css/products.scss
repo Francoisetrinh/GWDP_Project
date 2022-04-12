@@ -27,10 +27,11 @@
         }
     }
     &Item{
+        display: flex;
+        flex-wrap: wrap;
        &Form{
         display: flex;
         flex-wrap: wrap;
-        flex-direction: column;
         align-content: space-around;
             &Title{
                 font-family: 'Calligraffitti', cursive;

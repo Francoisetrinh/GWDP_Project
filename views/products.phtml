@@ -16,23 +16,13 @@
             <!-- Mise en place des produits de la BDD  -->
             <form class="productItemForm" action="?action=product" method="POST">
                 <h2 class="productItemFormTitle">Coupe générale de la robe</h2>
-            <?php
-            foreach ($aProducts as $ProductChoiceItem) { ?>
-                <label for="princess"><b></b></label>
-                <img class="productItemFormImage" src="./public/img/img_products/Lola_Dress.jpg" alt="Wedding_Dress_Lola"><br>
-                <div class="productItemFormButton">
-                <input class="productItemFormButtonRadio" type="radio" placeholder="princesse" name="princess" required><?php echo htmlspecialchars($ProductChoiceItem->getTitle())?> <br>
-            <?php } ?>
-                <!-- <label for="bohemia"><b></b></label>
-                    <img src="./public/img//img_products/Lola_Dress.jpg" alt="Wedding_Dress_Lola"><br>
-                    <div class="productButton">
-                    <input type="radio" placeholder="boheme" name="bohemia" required>Coupe Bohème-Champêtre<br>
+                <?php foreach ($aProducts as $ProductChoiceItem) { ?>
+                    <div class="productItemFormContainer">
+                        <label for="princess"></label>
+                        <img class="productItemFormImage" src="./public/img/img_products/Lola_Dress.jpg" alt="Wedding_Dress_Lola"><br>
+                        <input class="productItemFormButtonRadio" type="radio" placeholder="princesse" name="princess" required><?php echo htmlspecialchars($ProductChoiceItem->getTitle())?>
                     </div>
-                <label for="empire"><b></b></label>
-                    <img src="./public/img//img_products/Lola_Dress.jpg" alt="Wedding_Dress_Lola"><br>
-                    <div class="productButton">
-                    <input type="radio" placeholder="empire" name="bohemia" required>Coupe Bohème-Champêtre<br>
-                    </div> -->
+                <?php } ?>
             </form>   
         </div>
     </section>
