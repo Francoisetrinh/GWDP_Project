@@ -20,8 +20,8 @@
     <tr class="tableProductsMainRow">
       <th class="tableProductsMainHead" scope="row"><?= intval($oProductsTable -> getId())?></th>
       <td class="tableProductsMainColumn"><?= htmlspecialchars($oProductsTable -> getTitle())?></td>
-      <td class="tableProductsMainColumn">Otto</td>
-      <td class="tableProductsMainColumn">@mdo</td>
+      <td class="tableProductsMainColumn"><?= intval($oProductsTable -> getPrice())?></td>
+      <td class="tableProductsMainColumn"><?= intval($oProductsTable -> getCoefficient())?></td>
       <td class="tableProductsMainIcon"><a href="index.php?action=edit_product&id=<?php echo intval($oProductsTable -> getId()) ?>"><ion-icon name="pencil-outline"></ion-icon</a></td>
       <td class="tableProductsMainIcon"><a href="index.php?action=delete_product&id=<?php echo intval($oProductsTable -> getId()) ?>"><ion-icon name="trash-outline"></ion-icon></a></td>
     </tr>
