@@ -77,6 +77,11 @@ main{
         text-align: center;
         margin: 10px;
         font-family: Quattrocento;
+        img{
+            width: 300px;
+            height: 300px;
+            // object-fit: contain;
+        }
         &Link {
             a{
                 padding: 12px;

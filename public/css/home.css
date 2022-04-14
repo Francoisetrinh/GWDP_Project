@@ -112,6 +112,11 @@ main h1 {
   font-family: Quattrocento;
 }
 
+.viewContainerProducts img {
+  width: 300px;
+  height: 300px;
+}
+
 .viewContainerProductsLink a {
   padding: 12px;
   color: #aacac2;
