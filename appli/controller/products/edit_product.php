@@ -1,27 +1,56 @@
 <?php
-$content = 'éditer un produit';
 
-// Vérification de l'id
-$product_id = array_key_exists('product_id', $_POST) ? $_POST['product_id']:$_GET['product_id'];
+use appli\repository\ProductsRepository;
+use appli\repository\CategoryRepository;
+use appli\entity\Product;
 
-$aProduct = $oPdo ->getProducts();
+// on créer l'instance Object Repository du Product
+$oPdo = new ProductsRepository();
+$oCategoryRepository = new CategoryRepository();
 
-// Chargement des erreurs pour les champs invalides 
-$classError = [ ];
-foreach($aProduct as $aEditProduct) {
-    $classError[$aEditProduct] = '';
+$oProduct = $oPdo->getProduct($_GET['id']);
+
+if ($oProduct === NULL) {
+    header('Location: index.php?action=admin');
+    exit();
 }
 
-// Stockage des données et si le formulaire n'est pas vide, tester le remplissage du formulaire.
-if (!empty($_POST)) 
-{
-    // if(
-    //     !empty($_POST[''])
-    // )
-    $aProduct = $_POST;
+// Création d'un tableau avec les clés.
+$product = [
+    'img' => '',
+    'title' => '',
+    'description'=> '',
+    'price' => '',
+    'coefficient' => '',
+];
+
+$token = generateRandomString(30);
+
+$aCategories = $oCategoryRepository->getCategories();
+
+// Si post du formulaire, on vérifie les valeurs saisies.
+
+if(!empty($_POST) && $_POST['token'] == $oUserSession -> getToken('edit_product')) {
+    $product = [
+        'id' => $_POST['modelGeneralId'],
+        'img' => '',
+        'title' => $_POST['modelGeneralTitle'],
+        'description'=> $_POST['modelGeneralDescription'],
+        'price' => $_POST['modelGeneralPrice'],
+        'coefficient' => $_POST['modelGeneralCoefficient'],
+        'category_id' => $_POST['modelGeneralCategory'],
+    ];
+
+    $oProduct->hydrate($product);
+
+    $oPdo->updateProduct($oProduct);
+
+    header('Location: index.php?action=admin');
+    exit();
 }
 
-// Chargement de la vue
+$oUserSession -> setToken('edit_product', $token);
+
 $sTitle = 'Update product';
-$sContent = 'products';
+$sContent = 'edit_product';
 include_once VIEWS_DIR . '/template.phtml';

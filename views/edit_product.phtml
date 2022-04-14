@@ -1,0 +1,27 @@
+
+<!-- Vue de ma formulaire de l'admin pour l'insertion -->
+
+<h2>Insertion des produits</h2>
+<section>
+  <form  method="POST">
+    <input type="hidden" name="token" value='<?php echo $token ?>' >
+    <input type="hidden" name="modelGeneralId" id="modelGeneralId" value="<?php echo $oProduct->getId() ?>">
+    <fieldset>
+      <legend>Forme générale</legend>
+      <label for="modelGeneralCategory"><b>Categorie</b></label>
+      <select name="modelGeneralCategory" id="modelGeneralCategory">
+        <?php foreach ($aCategories as $oCategory) { ?>
+          <option value="<?php echo $oCategory->getId() ?>" <?php if ($oProduct->getCategory() == $oCategory->getId()) { ?> selected <?php } ?>><?php echo $oCategory->getTitle() ?></option>
+        <?php } ?>
+      </select><br>
+      <label for="modelGeneralTitle"><b>Titre</b></label>
+        <input id="modelGeneralTitle" type="text" placeholder="title" name="modelGeneralTitle" value="<?php echo $oProduct->getTitle() ?>" ><br>
+      <label for="modelGeneralDescription"><b>Description</b></label>
+        <input id="modelGeneralDescription" type="text" placeholder="description" name="modelGeneralDescription" value="<?php echo $oProduct->getDescription() ?>" ><br>
+      <label for="modelGeneralPrice"><b>Prix</b></label>
+        <input id="modelGeneralPrice" type="text" placeholder="price" name="modelGeneralPrice" value="<?php echo $oProduct->getPrice() ?>" ><br>
+      <label for="modelGeneralCoefficient"><b>Coefficient</b></label>
+        <input id="modelGeneralCoefficient" type="text" placeholder="coefficient" name="modelGeneralCoefficient" value="<?php echo $oProduct->getCoefficient() ?>" ><br>
+    </fieldset>
+  <button type="submit" name="submit"  id='submit' value='submit'>Enregistrer</button>
+</section>

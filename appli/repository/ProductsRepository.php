@@ -91,7 +91,7 @@ class ProductsRepository
      * @param int $id
      * @return Product|NULL
      */
-    public function getProduct(int $id): ?getProduct
+    public function getProduct(int $id): ?Product
     {
         $oPdo = PDOConnection::get();
         $query = $oPdo -> prepare('
@@ -161,12 +161,23 @@ class ProductsRepository
         SET
             p_title = :title,
             p_description = :description,
-            p_price = :price
+            p_price = :price,
+            c_id = :c_id,
+            p_coefficient = :coefficient,
+            p_img = :img
         WHERE
             p_id = :product_id
         ');
     
-        $query -> execute();
+        $query -> execute([
+            ':title' => $product -> getTitle(),
+            ':description' => $product -> getDescription(),
+            ':price' =>  $product -> getPrice(),
+            ':c_id' =>  $product -> getCategory(),
+            ':coefficient' =>  $product -> getCoefficient(),
+            ':img' => $product -> getImage(),
+            ':product_id' => $product -> getId()
+          ]);
     
     return $this;
   }

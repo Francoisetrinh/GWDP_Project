@@ -46,6 +46,9 @@ $action = array_key_exists('action', $_GET) ? $_GET['action'] : 'home';
         case 'insert_product':
             require CONTROLLER_DIR . '/products/insert_product.php';
             break;
+        case 'edit_product':
+            require CONTROLLER_DIR . '/products/edit_product.php';
+            break;
         case 'delete_product': 
             require CONTROLLER_DIR . '/products/delete_product.php';
             break;
