@@ -136,9 +136,9 @@ class ProductsRepository
     public function insertProduct(Product $product) : self {
         $query = $this -> DB_pdo -> prepare('
         INSERT INTO gwdp_products
-        (p_title, p_description, p_price, c_id, p_coefficient)
+        (p_title, p_description, p_price, c_id, p_coefficient, p_img)
       VALUES 
-        (:title,:description, :price, :c_id, :coefficient)
+        (:title,:description, :price, :c_id, :coefficient, :img)
       ');
 
       $query -> execute([
@@ -147,6 +147,7 @@ class ProductsRepository
         ':price' =>  $product -> getPrice(),
         ':c_id' =>  $product -> getCategory(),
         ':coefficient' =>  $product -> getCoefficient(),
+        ':img' => $product -> getImage(),
       ]);
 
       return $this;

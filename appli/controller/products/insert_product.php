@@ -42,6 +42,9 @@ if(!empty($_POST) && $_POST['token'] == $oUserSession -> getToken('insert_produc
     $oProduct->hydrate($product);
 
     $oPdo->insertProduct($oProduct);
+
+    header('Location: index.php?action=admin');
+    exit();
 }
 
 $oUserSession -> setToken('insert_product', $token);
