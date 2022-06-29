@@ -53,4 +53,5 @@ $oUserSession -> setToken('edit_product', $token);
 
 $sTitle = 'Update product';
 $sContent = 'edit_product';
+$content = 'modifier mon produit';
 include_once VIEWS_DIR . '/template.phtml';

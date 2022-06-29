@@ -14,4 +14,5 @@ if ( $aProducts === false) {
 //Chargement de la vue 
 $sTitle = 'Projet Green Wedding Dress';
 $sContent = 'products';
+$content = 'mes produits';
 include_once VIEWS_DIR . '/template.phtml';

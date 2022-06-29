@@ -36,16 +36,24 @@
             &Title{
                 font-family: 'Calligraffitti', cursive;
                 width: 100%;
+                margin-top: 50px;
             }
             &Image{
                 width: 250px;
                 height: 250px;
+                object-fit: scale-down;
+                margin: 10px;
+                &Title{
+                    font-size: 1em;
+                    text-align: center;
+                }
             }
-            &Button{
-                width: 100%;
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
+            
+            // &Button{
+            //     width: 100%;
+            //     margin-top: 10px;
+            //     margin-bottom: 10px;
+            // }
         }
     }
 }
@@ -75,4 +83,3 @@
         padding: 15px;
     }
 }
-

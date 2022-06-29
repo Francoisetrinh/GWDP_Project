@@ -62,8 +62,11 @@ $action = array_key_exists('action', $_GET) ? $_GET['action'] : 'home';
         case 'my_profile':
             require CONTROLLER_DIR . '/connexion/my_profile.php';
             break;
-        case 'edit_profile':
+        case 'edit_user':
             require CONTROLLER_DIR . '/user/edit_user.php';
+            break;
+        case 'orders':
+            require CONTROLLER_DIR . '/orders.php';
             break;
             // page USER LOGOUT
         case 'logout':

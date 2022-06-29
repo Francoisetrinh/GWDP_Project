@@ -93,4 +93,5 @@ if (!empty($_POST))
 //Chargement de la vue 
 $sTitle = 'Enregistrement d\'un utilisateur';
 $sContent = 'registration';
+$content = 'enregistrement de l\'utilisateur';
 include_once VIEWS_DIR . '/template.phtml';

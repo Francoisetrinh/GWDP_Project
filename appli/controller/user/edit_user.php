@@ -36,4 +36,5 @@ if (!empty($_POST))
 // Chargement de la vue
 $sTitle = 'Update user';
 $sContent = 'user_account';
+$content = 'modification utilisateur';
 include_once VIEWS_DIR . '/template.phtml';

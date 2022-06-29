@@ -41,4 +41,5 @@ if (!empty($_POST)) {
 
 $sTitle = 'Insert new user';
 $sContent = 'user_account';
+$content = 'insertion nouvel utilisateur';
 include_once VIEWS_DIR . '/template.phtml';

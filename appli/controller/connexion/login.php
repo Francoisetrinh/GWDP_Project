@@ -79,4 +79,5 @@ if (!empty($_POST))
 //Chargement de la vue 
 $sTitle = 'Connexion de l\'utilisateur';
 $sContent = 'login';
+$content = 'login';
 include_once VIEWS_DIR . '/template.phtml';

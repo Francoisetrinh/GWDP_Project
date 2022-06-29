@@ -25,7 +25,7 @@
         <span class="circle" onclick="currentSlide(3)"></span>
     </div>
 </div-layout>
-<h1 class="title">Concept de Robes de Mariée sur-mesure éco-responsable</h1>
+<h1 class="title">Concept de Robes de Mariée en précommande éco-responsable</h1>
 
 <div class="viewContainer">
     <?php
@@ -33,7 +33,7 @@
         <div class="card viewContainerProducts">  
             <img src="<?php echo htmlspecialchars(DIR_PROD_IMG. '/' . $productItem->getImage())?>" alt="wedding dress">
             <h2><?php echo htmlspecialchars($productItem->getTitle()) ?></h2>
-            <p class="price">1240€</p>
+            <p class="price"><?php echo htmlspecialchars($productItem->getPrice()) ?> €</p>
             <!-- <p></p> -->
             <div class="azerty viewContainerProductsLink">
                 <a href="index.php?action=products">En savoir plus</a>    

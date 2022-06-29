@@ -1,7 +1,7 @@
 <?php
 
  //Connexion à la base de données.
- const DB_WEDS_BASE= 'green_weddingdress_proto';
+ const DB_WEDS_BASE= 'wedsgreen';
  const DB_USER= 'root';
  const DB_PASSWORD= '';
  const DB_HOST = 'localhost';

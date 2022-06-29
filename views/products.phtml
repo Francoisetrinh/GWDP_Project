@@ -15,26 +15,30 @@
         </div class="productItem">
             <!-- Mise en place des produits de la BDD  -->
             <form class="productItemForm" action="?action=product" method="POST">
-                <h2 class="productItemFormTitle">Coupe générale de la robe</h2>
+                <h2 class="productItemFormTitle">Nos robes de mariée</h2>
                 <?php foreach ($aProducts as $ProductChoiceItem) { ?>
                     <div class="productItemFormContainer">
                         <label for="princess"></label>
-                        <img class="productItemFormImage" src="./public/img/img_products/Lola_Dress.jpg" alt="Wedding_Dress_Lola"><br>
-                        <input class="productItemFormButtonRadio" type="radio" placeholder="princesse" name="princess" required><?php echo htmlspecialchars($ProductChoiceItem->getTitle())?>
+                        <img class="productItemFormImage" 
+                        src="<?php echo htmlspecialchars(DIR_PROD_IMG. '/' . $ProductChoiceItem->getImage())?>" 
+                        alt="<?php echo htmlspecialchars($ProductChoiceItem->getDescription())?>">
+                        <a></a><br>
+                        <h4 class="productItemFormImageTitle"><?php echo htmlspecialchars($ProductChoiceItem->getTitle())?></h4>
+                        <!-- <input class="productItemFormButtonText" type="text" placeholder="princesse" name="princess" required>-->
                     </div>
                 <?php } ?>
             </form>   
         </div>
     </section>
-    <aside class="news">
+    <!-- <aside class="news">
         <h2>Nouveautés</h2>
         <p></p>
         <h2>Lieux de mariage</h2>
         <div class="card eventsLocation">  
             <img class="eventsLocationImage" src="./public/img/img_events/chateau-pioline.jpg" alt="chateau pioline">
             <h3 class="eventsLocationTitle">Château Pioline</h3>
-            <!-- <p class="price">1240€</p> -->
-            <a href="https://www.chateaudelapioline.com/fr/" target="_blank" class="eventsLocationTitleButton">En savoir plus</a>
+            <p class="price">1240€</p> -->
+            <!-- <a href="https://www.chateaudelapioline.com/fr/" target="_blank" class="eventsLocationTitleButton">En savoir plus</a>
         </div>
-    </aside>
+    </aside> -->
 </div>
