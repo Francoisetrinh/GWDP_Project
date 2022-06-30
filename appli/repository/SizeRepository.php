@@ -26,7 +26,7 @@ class SizeRepository
                 s_size_us AS sizeus,
                 s_size_eu AS sizeeu
             FROM gwdp_size
-            ORDER BY s_size_eu DESC
+            ORDER BY s_size_eu ASC
         ');
 
         // Passage de $limit en entier

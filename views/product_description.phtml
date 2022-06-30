@@ -5,14 +5,15 @@
     <div class="card viewContainerProductItem">  
         <img class="card viewContainerProductItemImage" src="<?php echo htmlspecialchars(DIR_PROD_IMG. '/' . $oProductItem->getImage())?>" alt="wedding dress">
     </div>
-    <div>
-        <h2><?php echo htmlspecialchars($oProductItem->getTitle()) ?></h2>
-        <p><?php echo htmlspecialchars($oProductItem->getDescription()) ?></p>
+    <div class="viewContainerProductDescription" >
+        <h2 class="viewContainerProductDescriptionTitle">
+        <?php echo htmlspecialchars($oProductItem->getTitle()) ?></h2>
+        <p class="viewContainerProductDescriptionContent"><?php echo htmlspecialchars($oProductItem->getDescription()) ?></p>
         <?php foreach ($aProductSize as $oProdSize) { ?>
             <p>
             <?php echo htmlspecialchars($oProdSize->getSizeEu()) ?></p>
         <?php } ?>
-        
-        <p class="price"><?php echo htmlspecialchars($oProductItem->getPrice()) ?> €</p>
+        <p class="viewContainerProductDescriptionPrice"><?php echo htmlspecialchars($oProductItem->getPrice()) ?> €</p>
     </div>
 </div>
+<div class="viewContainerButton"><button>Ajouter un panier</button></div>

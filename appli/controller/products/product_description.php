@@ -7,7 +7,7 @@ $oProductItem = $oProductItemRepository -> getProduct($_GET['id']);
 
 $oProductSizeRepository = new SizeRepository;
 $aProductSize = $oProductSizeRepository -> getSizes();
-var_dump($aProductSize);
+// var_dump($aProductSize);
 
 //Chargement de la vue 
 $sTitle = 'Description products';
