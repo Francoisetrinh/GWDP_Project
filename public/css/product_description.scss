@@ -1,0 +1,13 @@
+.viewContainer{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 75px;
+    &ProductItem{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        background: grey;
+        // width: 300px;
+        text-align: center;
+        margin: auto;
+        font-family: Quattrocento;
+    }
+}

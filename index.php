@@ -68,6 +68,9 @@ $action = array_key_exists('action', $_GET) ? $_GET['action'] : 'home';
         case 'orders':
             require CONTROLLER_DIR . '/orders.php';
             break;
+        case 'product_description':
+            require CONTROLLER_DIR . '/products/product_description.php';
+            break;
             // page USER LOGOUT
         case 'logout':
             session_destroy();

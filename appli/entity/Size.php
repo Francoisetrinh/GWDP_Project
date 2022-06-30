@@ -9,8 +9,8 @@ class Size
      * @var int $id */
     private int $id; 
 
-    /** @var int $size_us */
-    private int $size_us;
+    /** @var string $size_us */
+    private string $size_us;
 
     /** @var int $size_eu */
     private int $size_eu;
@@ -22,8 +22,8 @@ class Size
     {
         $this 
         -> setId($aSizeData['id'])
-        -> setSizeUS($aSizeData['size_us'])
-        -> setSizeEu($aSizeData['size_eu'])
+        -> setSizeUS($aSizeData['sizeus'])
+        -> setSizeEu($aSizeData['sizeeu'])
         ;
 
         return $this;
@@ -54,19 +54,19 @@ class Size
 
     /**
      * Get the value of size_us
-     * @return int
+     * @return string
      */
-    public function getSizeUs(): int
+    public function getSizeUs(): string
     {
         return $this->size_us;
     }
 
     /**
      * Set the value of size_us
-     * @param int $size_us
+     * @param string $size_us
      * @return self
      */
-    public function setSizeUs(int $size_us): self
+    public function setSizeUs(string $size_us): self
     {
         $this->size_us = $size_us;
 

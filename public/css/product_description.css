@@ -1,0 +1,17 @@
+.viewContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  margin-top: 75px;
+}
+
+.viewContainerProductItem {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: grey;
+  text-align: center;
+  margin: auto;
+  font-family: Quattrocento;
+}
+/*# sourceMappingURL=product_description.css.map */
