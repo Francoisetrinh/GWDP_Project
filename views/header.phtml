@@ -4,26 +4,28 @@
     <?php
     if(empty($_SESSION)) {  ?> 
         <ul class="navhaut" id="menuresp">
-        <li class="iconli"><a href="javascript:void(0);" class="icon" onclick="fonctionresponsively()">&#9776;</a></li>
-        <li><a class="nav-link active" aria-current="page" href="index.php?action=home">Accueil</a></li>
-        <li><a class="nav-link" href="index.php?action=history">Notre Histoire</a></li>
-        <li><a class="nav-link" href="index.php?action=news">Actualité</a></li>
-        <li> <a class="nav-link" href="index.php?action=products">Nos Produits</a></li> 
-        <li><a class="nav-link" href="index.php?action=registration">Inscription</a></li>
-        <li><a class="nav-link" href="index.php?action=login">Connexion</a></li>
+            <li class="iconli"><a href="javascript:void(0);" class="icon" onclick="fonctionresponsively()">&#9776;</a></li>
+            <li><a class="nav-link active" aria-current="page" href="index.php?action=home">Accueil</a></li>
+            <li><a class="nav-link" href="index.php?action=history">Notre Histoire</a></li>
+            <li><a class="nav-link" href="index.php?action=news">Actualité</a></li>
+            <li> <a class="nav-link" href="index.php?action=products">Nos Produits</a></li> 
+            <li><a class="nav-link" href="index.php?action=registration">Inscription</a></li>
+            <li><a class="nav-link" href="index.php?action=login">Connexion</a></li>
+            <li><a class="nav-link" href="index.php?action=panier">Panier</a></li>
         </ul>    
     <?php } else { ?>
         <ul class="navhaut" id="menuresp">
-        <li class="iconli"><a href="javascript:void(0);" class="icon" onclick="fonctionresponsively()">&#9776;</a></li>
-        <li><a class="nav-link active" aria-current="page" href="index.php?action=home">Accueil</a></li>
-        <li><a class="nav-link" href="index.php?action=history">Notre Histoire</a></li>
-        <li><a class="nav-link" href="index.php?action=news">Actualité</a></li>
-        <li> <a class="nav-link" href="index.php?action=products">Nos Produits</a></li>
-        <li><a class="nav-link" href="index.php?action=my_profile">Mon compte</a></li>
-        <?php if($oUserSession -> getRole()=='admin') {?>
-            <li><a href="index.php?action=admin" class="nav-link">Admin</a></li>
-        <?php }  ?>
-    </ul>  
+            <li class="iconli"><a href="javascript:void(0);" class="icon" onclick="fonctionresponsively()">&#9776;</a></li>
+            <li><a class="nav-link active" aria-current="page" href="index.php?action=home">Accueil</a></li>
+            <li><a class="nav-link" href="index.php?action=history">Notre Histoire</a></li>
+            <li><a class="nav-link" href="index.php?action=news">Actualité</a></li>
+            <li> <a class="nav-link" href="index.php?action=products">Nos Produits</a></li>
+            <li><a class="nav-link" href="index.php?action=my_profile">Mon compte</a></li>
+            <?php if($oUserSession -> getRole()=='admin') {?>
+                <li><a href="index.php?action=admin" class="nav-link">Admin</a></li>
+            <?php }  ?>
+            <li><a class="nav-link" href="index.php?action=panier">Panier</a></li>
+        </ul>  
     <?php } ?>
     
         <!-- <a class="nav-link" href="?action=admin">Admin</a> -->

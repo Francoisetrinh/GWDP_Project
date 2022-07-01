@@ -29,6 +29,5 @@ elementButtonCart.addEventListener('click', (e) =>
       size: lastSizeSelected.innerText
     });
     Storage.setItem('panier',JSON.stringify(currentPanier));
-    console.log(currentPanier);
   }
 });
