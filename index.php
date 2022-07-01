@@ -65,12 +65,6 @@ $action = array_key_exists('action', $_GET) ? $_GET['action'] : 'home';
         case 'edit_user':
             require CONTROLLER_DIR . '/user/edit_user.php';
             break;
-        case 'orders':
-            require CONTROLLER_DIR . '/orders.php';
-            break;
-        case 'product_description':
-            require CONTROLLER_DIR . '/products/product_description.php';
-            break;
             // page USER LOGOUT
         case 'logout':
             session_destroy();
@@ -90,6 +84,15 @@ $action = array_key_exists('action', $_GET) ? $_GET['action'] : 'home';
             break;
         case 'search_products':
             require CONTROLLER_DIR . '/products/search_products.php';
+            break;
+        case 'orders':
+            require CONTROLLER_DIR . '/orders.php';
+            break;
+        case 'product_description':
+            require CONTROLLER_DIR . '/products/product_description.php';
+            break;
+        case 'panier':
+            require CONTROLLER_DIR . '/panier.php';
             break;
         default :
             header('Location:?action=home');

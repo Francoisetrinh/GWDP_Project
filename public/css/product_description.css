@@ -28,21 +28,39 @@
   margin: 10px 50px 50px 30px;
 }
 
+.viewContainerProductDescriptionSize {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 50px 50px 30px;
+}
+
+.viewContainerProductDescriptionSizeContent {
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #005137;
+}
+
+.viewContainerProductDescriptionSizeContent.selected {
+  color: brown;
+}
+
+.viewContainerProductDescriptionSizeContent:hover {
+  text-decoration: underline;
+  color: brown;
+}
+
 .viewContainerProductDescriptionPrice {
   font-size: 1.5em;
   font-weight: 700;
   text-align: center;
+  color: #005137;
 }
 
-.viewContainerButton {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.viewContainerProductDescriptionButton {
+  margin: auto;
+  display: block;
 }
 /*# sourceMappingURL=product_description.css.map */
