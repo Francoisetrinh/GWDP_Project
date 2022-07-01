@@ -1,9 +1,9 @@
 // Controle du Panier si vide
 const checkPanierIsEmpty = function() {
-    let elementPanierInfo = document.querySelector('.cartProducts-info');
+    let elementPanierInfo = document.querySelector('.cartProductsInfo');
 
     if (StoragePanier.length == 0) {
-        elementPanier.style.display = 'none';
+        elementPanier.parentElement.style.display = 'none';
         elementPanierInfo.innerText = 'Votre Panier ne comporte aucun articles.';
         return;
     }
@@ -20,10 +20,30 @@ const createItemPanier = function(balise, elementTarget, className, innerText) {
     return element;
 }
 
+// Creation du Panier
+const createPanier = function() {
+    elementPanier.innerHTML = '';
+    StoragePanier.forEach((itemPanier, indexPanier) => {
+        let elementItem = createItemPanier('tr', elementPanier, 'cartProductsListItem', '');
+        elementItem.id = indexPanier;
+        createItemPanier('td', elementItem, 'cartProductsListItemTitle', 'A DEFINIR EN AJAX JSON');
+        createItemPanier('td', elementItem, 'cartProductsListItemSize', itemPanier.size);
+        createItemPanier('td', elementItem, 'cartProductsListItemPrice', 'A DEFINIR EN AJAX JSON');
+        createItemPanier('td', elementItem, 'cartProductsListItemQuantity', 1);
+        let elementRemove = createItemPanier('td', elementItem, 'cartProductsListItemRemove', 'Supprimer');
+        elementRemove.addEventListener('click', (e) => {
+            StoragePanier.splice(e.currentTarget.parentElement.id, 1);
+            Storage.setItem('panier', JSON.stringify(StoragePanier));
+            createPanier(StoragePanier);
+            checkPanierIsEmpty();
+        })
+    });
+}
+
 let Storage = localStorage;
 let StoragePanier = [];
 
-let elementPanier = document.getElementById('cartProducts-item');
+let elementPanier = document.getElementById('cartProductsList');
 
 // Definie le Panier si initialisée dans le Storage
 if (Storage.getItem('panier')) {
@@ -34,25 +54,4 @@ if (Storage.getItem('panier')) {
 checkPanierIsEmpty();
 
 // Creation du Panier dans le DOM
-StoragePanier.forEach((itemPanier, indexPanier) => {
-    let elementItem = createItemPanier('tr', elementPanier, 'cartProductsItem', '');
-    elementItem.id = indexPanier;
-    createItemPanier('td', elementItem, 'cartProductsItemTitle', 'A DEFINIR EN AJAX JSON');
-    createItemPanier('td', elementItem, 'cartProductsItemSize', itemPanier.size);
-    createItemPanier('td', elementItem, 'cartProductsItemPrice', 'A DEFINIR EN AJAX JSON');
-    createItemPanier('td', elementItem, 'cartProductsItemQuantity', 1);
-    createItemPanier('td', elementItem, 'cartProductsItemRemove', 'Supprimer');
-});
-
-let elementItemsPanierRemove = document.querySelectorAll('.cartProductsItemRemove');
-
-// Suppression de l'item dans le Panier
-elementItemsPanierRemove.forEach(elementItemPanierRemove => {
-    elementItemPanierRemove.addEventListener('click', (e) => {
-        StoragePanier.splice(e.currentTarget.parentElement.id, 1);
-        Storage.setItem('panier', JSON.stringify(StoragePanier));
-        e.currentTarget.parentElement.remove();
-        checkPanierIsEmpty();
-    })
-});
-
+createPanier();

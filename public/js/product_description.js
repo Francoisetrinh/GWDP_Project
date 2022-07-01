@@ -14,6 +14,7 @@ elementSizes.forEach(elementSize => {
 });
 
 let elementButtonCart = document.querySelector('.viewContainerProductDescriptionButton');
+let elementPopup = document.querySelector('.viewContainerProductDescriptionPopup');
 
 elementButtonCart.addEventListener('click', (e) =>
 {
@@ -28,6 +29,15 @@ elementButtonCart.addEventListener('click', (e) =>
       id: urlParams.get('id'),
       size: lastSizeSelected.innerText
     });
+
     Storage.setItem('panier',JSON.stringify(currentPanier));
+
+    console.log(currentPanier)
+
+    elementPopup.classList.add('active');
+
+    setTimeout(() => {
+      elementPopup.classList.remove('active');
+    }, 5000);
   }
 });

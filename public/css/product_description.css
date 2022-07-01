@@ -15,6 +15,34 @@
   font-family: Quattrocento;
 }
 
+.viewContainerProductDescription {
+  position: relative;
+}
+
+.viewContainerProductDescriptionPopup {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  position: absolute;
+  top: 25%;
+  background-color: #005137;
+  height: 100px;
+  width: 100%;
+  z-index: 99;
+  border-radius: 10px;
+}
+
+.viewContainerProductDescriptionPopup.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .viewContainerProductDescriptionTitle {
   font-size: 2em;
   font-weight: 700;

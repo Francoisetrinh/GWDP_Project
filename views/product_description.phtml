@@ -6,6 +6,9 @@
         <img class="card viewContainerProductItemImage" src="<?php echo htmlspecialchars(DIR_PROD_IMG. '/' . $oProductItem->getImage())?>" alt="wedding dress">
     </div>
     <div class="viewContainerProductDescription" >
+        <div class="viewContainerProductDescriptionPopup">
+            <p>L'article à été ajouter avec succès à votre Panier !</p>
+        </div>
         <h2 class="viewContainerProductDescriptionTitle">
         <?php echo htmlspecialchars($oProductItem->getTitle()) ?></h2>
         <p class="viewContainerProductDescriptionContent"><?php echo htmlspecialchars($oProductItem->getDescription()) ?></p>
