@@ -18,4 +18,9 @@
             <td class="cartProductsItemRemove">Supprimer</td>
         </tr> -->
     </table>
+    <?php if ($oUserSession->isConnected()) { ?>
+        <button class="cartProducts-validate">Commander</button>
+    <?php } else { ?>
+        <a class="cartProducts-signin" href="?action=login">Veuillez vous connecter pour Commander.</a>
+    <?php } ?>
 </section>
