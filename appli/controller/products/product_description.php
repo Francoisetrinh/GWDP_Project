@@ -10,7 +10,6 @@ $aProductSize = $oProductSizeRepository -> getSizes();
 // var_dump($aProductSize);
 
 //Chargement de la vue 
-$sTitle = 'Description products';
+$sTitle = 'Description du produit';
 $sContent = 'product_description';
-$content = 'description des produits';
 include_once VIEWS_DIR . '/template.phtml';

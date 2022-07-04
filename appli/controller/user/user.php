@@ -11,7 +11,6 @@ if ($aUsers === false) {
 }
 
 //Chargement de la vue 
-$sTitle = 'Projet Green Wedding Dress';
+$sTitle = 'Mon profil';
 $sContent = 'my_profile';
-$content = 'mon profil';
 include_once VIEWS_DIR . '/template.phtml';

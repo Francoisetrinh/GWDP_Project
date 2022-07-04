@@ -54,7 +54,6 @@ if(!empty($_POST) && $_POST['token'] == $oUserSession -> getToken('insert_produc
 
 $oUserSession -> setToken('insert_product', $token);
 
-$sTitle = 'Insert new product';
+$sTitle = 'Insérer un produit';
 $sContent = 'insert_product';
-$content = 'insérer mon produit';
 include_once VIEWS_DIR . '/template.phtml';

@@ -2,7 +2,6 @@
 
 
 //Chargement de la vue 
-$sTitle = 'News';
+$sTitle = 'Nouveautés';
 $sContent = 'news';
-$content = 'nouveautés';
 include_once VIEWS_DIR . '/template.phtml';

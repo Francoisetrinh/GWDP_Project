@@ -39,7 +39,6 @@ if (!empty($_POST)) {
     $oPdo->insertUser($user);
 }
 
-$sTitle = 'Insert new user';
+$sTitle = 'Insérer un nouvelle utilisateur';
 $sContent = 'user_account';
-$content = 'insertion nouvel utilisateur';
 include_once VIEWS_DIR . '/template.phtml';

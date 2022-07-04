@@ -2,7 +2,6 @@
 
 
 //Chargement de la vue 
-$sTitle = 'Our Story';
+$sTitle = 'Histoire';
 $sContent = 'history';
-$content = 'histoire';
 include_once VIEWS_DIR . '/template.phtml';

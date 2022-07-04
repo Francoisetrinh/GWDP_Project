@@ -15,5 +15,4 @@ $oUser = UserRepository::getUser($oUserSession->getId());
 //Chargement de la vue 
 $sTitle = 'profil de l\'utilisateur';
 $sContent = 'my_profile';
-$content = 'mon profil';
 include_once VIEWS_DIR . '/template.phtml';
