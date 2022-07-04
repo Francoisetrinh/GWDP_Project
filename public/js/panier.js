@@ -84,8 +84,7 @@ if (elementPanierValidate) {
             success: function (response) {
                 StoragePanier = [];
                 Storage.setItem('panier', JSON.stringify(StoragePanier));
-                createPanier();
-                checkPanierIsEmpty();
+                document.location.href = '?action=orders';
             }
         });
     })

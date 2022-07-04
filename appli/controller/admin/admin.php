@@ -6,6 +6,11 @@ use \appli\repository\UserRepository;
 use \appli\repository\OrdersRepository;
 use \appli\repository\OrdersDetailsRepository;
 
+if (!$oUserSession->isConnected() || $oUserSession->getRole() != 'admin') {
+    header('Location:?action=login');
+    exit;
+}
+
 $oAllProductsRepository = new ProductsRepository;
 $aProducts = $oAllProductsRepository -> getProducts(20);
 

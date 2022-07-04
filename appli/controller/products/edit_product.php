@@ -4,6 +4,11 @@ use appli\repository\ProductsRepository;
 use appli\repository\CategoryRepository;
 use appli\entity\Product;
 
+if (!$oUserSession->isConnected() || $oUserSession->getRole() != 'admin') {
+    header('Location:?action=login');
+    exit;
+}
+
 // on créer l'instance Object Repository du Product
 $oPdo = new ProductsRepository();
 $oCategoryRepository = new CategoryRepository();

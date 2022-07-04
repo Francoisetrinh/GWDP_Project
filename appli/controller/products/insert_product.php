@@ -4,6 +4,11 @@ use appli\repository\ProductsRepository;
 use appli\repository\CategoryRepository;
 use appli\entity\Product;
 
+if (!$oUserSession->isConnected() || $oUserSession->getRole() != 'admin') {
+    header('Location:?action=login');
+    exit;
+}
+
 // Variable valeur vide
 $product_id = '';
 
