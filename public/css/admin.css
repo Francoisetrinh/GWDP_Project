@@ -26,23 +26,23 @@
   color: white;
 }
 
-.clientsTitle {
+.clientsTitle, .commandesTitle {
   font-family: 'Lovers Quarrel', cursive;
   font-weight: 900;
   font-size: 3em;
   text-align: center;
 }
 
-.clientsTable {
+.clientsTable, .commandesTable {
   width: 100%;
   text-align: center;
 }
 
-.clientsTableHeadRow {
+.clientsTableHeadRow, .commandesTableHeadRow {
   background: #8f3744;
 }
 
-.clientsTableHeadColumn {
+.clientsTableHeadColumn, .commandesTableHeadColumn {
   width: 60px;
 }
 /*# sourceMappingURL=admin.css.map */

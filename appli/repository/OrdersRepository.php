@@ -38,6 +38,57 @@ class OrdersRepository
         return $this;
     }
 
+    public function getOrdersUser(int $userId, int $limit = 20): array
+    {
+        $query = $this-> DB_pdo -> prepare('
+            SELECT
+                gwdp_orders.o_id as orderId,
+                gwdp_orders.u_id as user,
+                o_flags as flags,
+                o_date as dateOrder,
+                o_date_quote as dateOrderQuote,
+                gwdp_users.u_id AS id,
+                u_name AS name,
+                u_firstname AS firstname,
+                u_address AS address,
+                u_postalcode AS postalcode, 
+                u_city AS city,
+                u_phone AS phone, 
+                u_login AS login,
+                u_email AS email,
+                u_password AS password,
+                u_role AS role,
+                u_date AS date,
+                u_date_connect AS dateconnect,
+                SUM(d_price) AS total
+            FROM '. OrdersRepository::DB_WEDS_TABLE.'
+            INNER JOIN gwdp_users ON gwdp_users.u_id = gwdp_orders.u_id
+            INNER JOIN gwdp_order_detail ON gwdp_order_detail.o_id = gwdp_orders.o_id
+            WHERE gwdp_orders.u_id = :user
+            GROUP BY gwdp_orders.o_id
+            ORDER BY gwdp_orders.o_id ASC
+        ');
+
+        // Passage de $limit en entier
+        $query -> execute([':user' => $userId]);
+        
+        $oOrders = [];
+        while ($aData = $query -> fetch(\PDO::FETCH_ASSOC)) {
+            // Création d'un objet
+            $oOrder = new Order();
+            $oUser = new User();
+
+            $oUser -> hydrate($aData);
+
+            $aData['user'] = $oUser;
+
+            $oOrder -> hydrate($aData);
+
+            $oOrders[] = $oOrder;
+        }
+        return $oOrders;
+    }
+
     public function getOrders(int $limit = 20): array
     {
         $query = $this-> DB_pdo -> prepare('

@@ -1,20 +1,16 @@
 <?php
 
-use \appli\repository\UserSession;
 use \appli\framework\PDOConnection;
 use \appli\repository\UserRepository;
 
-$userSession = new UserSession();
 
-if ( ($userId = $userSession->getId() ) === null ) {
+if (!$oUserSession->isConnected()) {
     header('Location:?action=login');
     exit;
 }
 
 
-$oUser = UserRepository::getUser($userId);
-// var_dump($userId);
-// var_dump($oUser -> getName());
+$oUser = UserRepository::getUser($oUserSession->getId());
 
 //Chargement de la vue 
 $sTitle = 'profil de l\'utilisateur';

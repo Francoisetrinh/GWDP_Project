@@ -25,14 +25,14 @@
     } 
 }
 
-.clientsTitle{
+.clientsTitle, .commandesTitle{
     font-family: 'Lovers Quarrel', cursive;
     font-weight: 900;
     font-size: 3em;
     text-align: center;
 }
 
-.clientsTable{
+.clientsTable, .commandesTable{
     width: 100%;
     text-align: center;
     &Head{
