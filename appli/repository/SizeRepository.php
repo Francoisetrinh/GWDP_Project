@@ -56,7 +56,7 @@ class SizeRepository
                 s_size_us AS sizeUs,
                 s_size_eu AS sizeEu
             FROM '. SizeRepository::DB_WEDS_TABLE.'
-            WHERE p_id = :id
+            WHERE s_id = :id
         ');
         
         $query -> execute([':id' => $id]);
@@ -65,7 +65,7 @@ class SizeRepository
         if($aData) {
             $oSize = new Size();
             $oSize -> hydrate($aData);
-        return $oSize;
+            return $oSize;
         } 
         
         return NULL;

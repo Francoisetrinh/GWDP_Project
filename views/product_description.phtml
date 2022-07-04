@@ -14,7 +14,7 @@
         <p class="viewContainerProductDescriptionContent"><?php echo htmlspecialchars($oProductItem->getDescription()) ?></p>
         <div class="viewContainerProductDescriptionSize">
             <?php foreach ($aProductSize as $oProdSize) { ?>
-                <p class="viewContainerProductDescriptionSizeContent"><?php echo htmlspecialchars($oProdSize->getSizeEu()) ?> (<?php echo htmlspecialchars($oProdSize->getSizeUs()) ?>)</p>
+                <p id="<?php echo htmlspecialchars($oProdSize->getId()) ?>" class="viewContainerProductDescriptionSizeContent"><?php echo htmlspecialchars($oProdSize->getSizeEu()) ?> (<?php echo htmlspecialchars($oProdSize->getSizeUs()) ?>)</p>
             <?php } ?>
         </div>
         <p class="viewContainerProductDescriptionPrice"><?php echo htmlspecialchars($oProductItem->getPrice()) ?> €</p>

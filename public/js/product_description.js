@@ -27,12 +27,11 @@ elementButtonCart.addEventListener('click', (e) =>
     let currentPanier = JSON.parse(Storage.getItem('panier'));
     currentPanier.push( {
       id: urlParams.get('id'),
-      size: lastSizeSelected.innerText
+      size: lastSizeSelected.id,
+      quantity: 1
     });
 
     Storage.setItem('panier',JSON.stringify(currentPanier));
-
-    console.log(currentPanier)
 
     elementPopup.classList.add('active');
 

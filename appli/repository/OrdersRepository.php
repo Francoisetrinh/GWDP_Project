@@ -19,7 +19,7 @@ class OrdersRepository
      * @return array
      */
 
-    public function addOrder(Order $oOrder): self
+    public function addOrder(Order $oOrder): int
     {
         $query = $this -> DB_pdo -> prepare('
             INSERT INTO '. OrdersRepository::DB_WEDS_TABLE.'
@@ -35,7 +35,7 @@ class OrdersRepository
             ':o_date_quote' =>  date_format($oOrder -> getDateQuote(), 'Y-m-d H:i:s')
         ]);
 
-        return $this;
+        return $this->DB_pdo->lastInsertId();
     }
 
     public function getOrdersUser(int $userId, int $limit = 20): array

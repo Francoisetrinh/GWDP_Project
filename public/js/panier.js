@@ -4,7 +4,9 @@ const checkPanierIsEmpty = function() {
 
     if (StoragePanier.length == 0) {
         elementPanier.parentElement.style.display = 'none';
-        elementPanierValidate.style.display = 'none';
+        if (elementPanierValidate) {
+            elementPanierValidate.style.display = 'none';
+        }
         elementPanierInfo.innerText = 'Votre Panier ne comporte aucun articles.';
         return;
     }
@@ -37,9 +39,9 @@ const createPanier = function() {
                 elementItem.id = indexPanier;
                 let elementLink = createItemPanier('a', elementItem, 'cartProductsListItemTitle', response[indexPanier].title);
                 elementLink.href = '?action=product_description&id='+itemPanier.id;
-                createItemPanier('td', elementItem, 'cartProductsListItemSize', itemPanier.size);
+                createItemPanier('td', elementItem, 'cartProductsListItemSize', response[indexPanier].size);
                 createItemPanier('td', elementItem, 'cartProductsListItemPrice', response[indexPanier].price + ' €');
-                createItemPanier('td', elementItem, 'cartProductsListItemQuantity', 1);
+                createItemPanier('td', elementItem, 'cartProductsListItemQuantity', itemPanier.quantity);
                 let elementRemove = createItemPanier('td', elementItem, 'cartProductsListItemRemove', 'Supprimer');
                 elementRemove.addEventListener('click', (e) => {
                     StoragePanier.splice(e.currentTarget.parentElement.id, 1);
@@ -70,21 +72,22 @@ checkPanierIsEmpty();
 createPanier();
 
 // Validation du Panier
-
-elementPanierValidate.addEventListener('click', (e) => {
-    $.ajax({
-        type: 'post',
-        url: 'index.php?action=panier',
-        data: {
-            action:'validatePanier',
-            panier: JSON.parse(Storage.getItem('panier'))
-        },
-        success: function (response) {
-            StoragePanier = [];
-            Storage.setItem('panier', JSON.stringify(StoragePanier));
-            createPanier();
-            checkPanierIsEmpty();
-        }
-    });
-})
+if (elementPanierValidate) {
+    elementPanierValidate.addEventListener('click', (e) => {
+        $.ajax({
+            type: 'post',
+            url: 'index.php?action=panier',
+            data: {
+                action:'validatePanier',
+                panier: JSON.parse(Storage.getItem('panier'))
+            },
+            success: function (response) {
+                StoragePanier = [];
+                Storage.setItem('panier', JSON.stringify(StoragePanier));
+                createPanier();
+                checkPanierIsEmpty();
+            }
+        });
+    })
+}
 

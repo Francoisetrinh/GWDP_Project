@@ -1,9 +1,13 @@
 <?php
 
 use \appli\repository\OrdersRepository;
+use \appli\repository\OrdersDetailsRepository;
 use \appli\repository\ProductsRepository;
+use \appli\repository\SizeRepository;
 use \appli\entity\Order;
+use \appli\entity\OrderDetails;
 use \appli\entity\User;
+use \appli\entity\Size;
 
 //Chargement de la vue 
 $sTitle = 'Panier';
@@ -13,16 +17,19 @@ if (!empty($_POST) && isset($_POST['action'])) {
     if ($_POST['action'] == 'infoPanier') {
         // INFORMATION DU PANIER
         $oProductRepository = new ProductsRepository;
+        $oSizeRepository = new SizeRepository;
 
         $aPanierInfo = [];
 
         foreach ($_POST['panier'] as $aDataPanier) {
             $oProduct = $oProductRepository -> getProduct($aDataPanier['id']);
+            $oSize = $oSizeRepository -> getSize($aDataPanier['size']);
 
             if ($oProduct) {
                 $aPanierInfo[] = [
                     'title' => $oProduct->getTitle(),
-                    'price' => $oProduct->getPrice()
+                    'price' => $oProduct->getPrice(),
+                    'size' => $oSize->getSizeEu() . ' (' . $oSize->getSizeUs() . ')'
                 ];
             }
         }
@@ -34,6 +41,9 @@ if (!empty($_POST) && isset($_POST['action'])) {
     } else if ($_POST['action'] == 'validatePanier' && $oUserSession->isConnected()) {
         // ENREGISTREMENT DU PANIER
         $oOrdersRepository = new OrdersRepository;
+        $oOrdersDetailsRepository = new OrdersDetailsRepository;
+        $oProductRepository = new ProductsRepository;
+        $oSizeRepository = new SizeRepository;
 
         $oCurrentTime = new \DateTime('NOW');
 
@@ -48,7 +58,24 @@ if (!empty($_POST) && isset($_POST['action'])) {
         $oOrder->setDate($oCurrentTime);
         $oOrder->setDateQuote($oCurrentTime);
 
-        $oOrdersRepository->addOrder($oOrder);
+        $iOrderId = $oOrdersRepository->addOrder($oOrder);
+
+        foreach ($_POST['panier'] as $aDataPanier) {
+            $oProduct = $oProductRepository -> getProduct($aDataPanier['id']);
+            $oSize = $oSizeRepository -> getSize($aDataPanier['size']);
+
+            if ($oProduct) {
+                $oOrderDetails = new OrderDetails();
+                $oOrderDetails
+                    -> setProduct($oProduct)
+                    -> setQuantity($aDataPanier['quantity'])
+                    -> setPrice($oProduct->getPrice())
+                    -> setSize($oSize)
+                ;
+
+                $oOrdersDetailsRepository->addDetail($oOrderDetails, $iOrderId);
+            }
+        }
 
         exit();
     }

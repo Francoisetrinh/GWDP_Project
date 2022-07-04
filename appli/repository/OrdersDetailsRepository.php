@@ -15,6 +15,26 @@ class OrdersDetailsRepository
       $this -> DB_pdo = PDOConnection::get();
     } 
 
+    public function addDetail(OrderDetails $oDetails, int $order): self
+    {
+        $query = $this -> DB_pdo -> prepare('
+            INSERT INTO '. OrdersDetailsRepository::DB_WEDS_TABLE.'
+                (o_id, p_id, d_quantity, d_price, s_id)
+            VALUES 
+            (:o_id, :p_id, :d_quantity, :d_price, :s_id)
+        ');
+
+        $query -> execute([
+            ':o_id' => $order,
+            ':p_id' => $oDetails -> getProduct()->getId(),
+            ':d_quantity' =>  $oDetails -> getQuantity(),
+            ':d_price' =>  $oDetails -> getPrice(),
+            ':s_id' =>  $oDetails -> getSize() -> getId()
+        ]);
+
+        return $this;
+    }
+
      /**
      * @param int $limit 
      * @return array
