@@ -10,7 +10,6 @@ const resetAction = function() {
     actionLink = null;
     activeAction = false;
     elementPopupActionAdmin.classList.remove('active');
-    elementPopupActionYes.href = '#';
 }
 
 if (elementsActionAdmin && elementPopupActionAdmin && elementPopupActionYes && elementPopupActionNo) {
