@@ -1,1 +1,58 @@
-<h1 class="ordersTitle">Mes commandes</h1>
+<link rel="stylesheet" href="./public/css/orders.css">
+
+<section class='orders'>
+    <h1 class="ordersTitle">Mes commandes</h1>
+
+    <table class='ordersLast'>
+        <thead>
+            <tr>
+                <th class='ordersLastTitle'>Numero de Commande</th>
+                <th class='ordersLastTitle'>Status</th>
+                <th class='ordersLastTitle'>Total</th>
+                <th class='ordersLastTitle'>Date</th>
+                <th class='ordersLastTitle'>Details</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <?php foreach ($aOrders as $oOrder) { ?>
+                <tr class='ordersLastContainer'>
+                    <td class='ordersLastContainerContent'><?php echo $oOrder->getId() ?></td>
+                    <td class='ordersLastContainerContent'><?php echo $oOrder->getFlags() ?></td>
+                    <td class='ordersLastContainerContent'><?php echo $oOrder->getTotal() ?> €</td>
+                    <td class='ordersLastContainerContent'><?php echo date_format($oOrder->getDateQuote(), 'Y/m/d H:i:s') ?></td>
+                    <td class='ordersLastContainerDetails'>Voir Details</td>
+                </tr>
+                <tr>
+                    <td class='ordersLastDetails' colspan="5">
+                        <div class='ordersLastDetailsContainer'>
+                            <table class='ordersLastDetailsContainerList'>
+                                <thead>
+                                    <tr>
+                                        <th>Article</th>
+                                        <th>Taille</th>
+                                        <th>Price</th>
+                                        <th>Quantité</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <?php foreach ($oOrder->getDetails() as $oProduct) { ?>
+                                        <tr>
+                                            <td><?php echo $oProduct->getProduct()->getTitle() ?></td>
+                                            <td><?php echo $oProduct->getSize()->getSizeEu() ?> (<?php echo $oProduct->getSize()->getSizeUS() ?>)</td>
+                                            <td><?php echo $oProduct->getPrice() ?></td>
+                                            <td><?php echo $oProduct->getQuantity() ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</section>
+
+<script src="./public/js/orders.js"></script>

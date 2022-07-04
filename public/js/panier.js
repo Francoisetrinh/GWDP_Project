@@ -35,7 +35,8 @@ const createPanier = function() {
             StoragePanier.forEach((itemPanier, indexPanier) => {
                 let elementItem = createItemPanier('tr', elementPanier, 'cartProductsListItem', '');
                 elementItem.id = indexPanier;
-                createItemPanier('td', elementItem, 'cartProductsListItemTitle', response[indexPanier].title);
+                let elementLink = createItemPanier('a', elementItem, 'cartProductsListItemTitle', response[indexPanier].title);
+                elementLink.href = '?action=product_description&id='+itemPanier.id;
                 createItemPanier('td', elementItem, 'cartProductsListItemSize', itemPanier.size);
                 createItemPanier('td', elementItem, 'cartProductsListItemPrice', response[indexPanier].price + ' €');
                 createItemPanier('td', elementItem, 'cartProductsListItemQuantity', 1);

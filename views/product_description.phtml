@@ -7,14 +7,14 @@
     </div>
     <div class="viewContainerProductDescription" >
         <div class="viewContainerProductDescriptionPopup">
-            <p>L'article à été ajouté avec succès à votre Panier !</p>
+            <p>L'article à été ajouter avec succès à votre Panier !</p>
         </div>
         <h2 class="viewContainerProductDescriptionTitle">
         <?php echo htmlspecialchars($oProductItem->getTitle()) ?></h2>
         <p class="viewContainerProductDescriptionContent"><?php echo htmlspecialchars($oProductItem->getDescription()) ?></p>
         <div class="viewContainerProductDescriptionSize">
             <?php foreach ($aProductSize as $oProdSize) { ?>
-                <p class="viewContainerProductDescriptionSizeContent"><?php echo htmlspecialchars($oProdSize->getSizeEu()) ?></p>
+                <p class="viewContainerProductDescriptionSizeContent"><?php echo htmlspecialchars($oProdSize->getSizeEu()) ?> (<?php echo htmlspecialchars($oProdSize->getSizeUs()) ?>)</p>
             <?php } ?>
         </div>
         <p class="viewContainerProductDescriptionPrice"><?php echo htmlspecialchars($oProductItem->getPrice()) ?> €</p>

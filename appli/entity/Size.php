@@ -21,9 +21,9 @@ class Size
     public function hydrate(array $aSizeData):self
     {
         $this 
-        -> setId($aSizeData['id'])
-        -> setSizeUS($aSizeData['sizeus'])
-        -> setSizeEu($aSizeData['sizeeu'])
+        -> setId($aSizeData['sizeId'])
+        -> setSizeUS($aSizeData['sizeUs'])
+        -> setSizeEu($aSizeData['sizeEu'])
         ;
 
         return $this;

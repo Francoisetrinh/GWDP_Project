@@ -22,9 +22,9 @@ class SizeRepository
     {
         $query = $this-> DB_pdo -> prepare('
             SELECT
-                s_id AS id,
-                s_size_us AS sizeus,
-                s_size_eu AS sizeeu
+                s_id AS sizeId,
+                s_size_us AS sizeUs,
+                s_size_eu AS sizeEu
             FROM gwdp_size
             ORDER BY s_size_eu ASC
         ');
@@ -52,9 +52,9 @@ class SizeRepository
         $oPdo = PDOConnection::get();
         $query = $oPdo -> prepare('
             SELECT
-                s_id AS id,
-                s_size_us AS sizeus,
-                s_size_eu AS sizeeu,
+                s_id AS sizeId,
+                s_size_us AS sizeUs,
+                s_size_eu AS sizeEu
             FROM '. SizeRepository::DB_WEDS_TABLE.'
             WHERE p_id = :id
         ');

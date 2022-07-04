@@ -1,6 +1,9 @@
 <?php
 namespace appli\entity;
 
+use \appli\entity\User;
+use \appli\repository\OrdersDetailsRepository;
+
 class Order
 {
     public const DB_WEDS_TABLE = "gwdp_orders";
@@ -10,6 +13,8 @@ class Order
     private string $flags;
     private \DateTime $date;
     private \DateTime $dateQuote;
+    private int $total;
+    private array $details;
 
     /**
      * @param array $aOrderData
@@ -25,7 +30,11 @@ class Order
         -> setFlags($aOrderData['flags'])
         -> setDate($dateOrder)
         -> setDateQuote($dateOrderQuote)
+        -> setTotal($aOrderData['total'])
         ;
+
+        $oOrderDetailRepository = new OrdersDetailsRepository;
+        $this->setDetails($oOrderDetailRepository->getDetails($this->getId()));
 
         return $this;
     }
@@ -150,6 +159,54 @@ class Order
     public function setDateQuote(\DateTime $dateQuote): self
     {
         $this->dateQuote = $dateQuote;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of total
+     *
+     * @return int
+     */
+    public function getTotal(): int
+    {
+        return $this->total;
+    }
+
+    /**
+     * Set the value of total
+     *
+     * @param int $total
+     *
+     * @return self
+     */
+    public function setTotal(int $total): self
+    {
+        $this->total = $total;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of details
+     *
+     * @return array
+     */
+    public function getDetails(): array
+    {
+        return $this->details;
+    }
+
+    /**
+     * Set the value of details
+     *
+     * @param array $details
+     *
+     * @return self
+     */
+    public function setDetails(array $details): self
+    {
+        $this->details = $details;
 
         return $this;
     }

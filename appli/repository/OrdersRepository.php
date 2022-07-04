@@ -42,7 +42,7 @@ class OrdersRepository
     {
         $query = $this-> DB_pdo -> prepare('
             SELECT
-                o_id as orderId,
+                gwdp_orders.o_id as orderId,
                 gwdp_orders.u_id as user,
                 o_flags as flags,
                 o_date as dateOrder,
@@ -59,10 +59,13 @@ class OrdersRepository
                 u_password AS password,
                 u_role AS role,
                 u_date AS date,
-                u_date_connect AS dateconnect
+                u_date_connect AS dateconnect,
+                SUM(d_price) AS total
             FROM '. OrdersRepository::DB_WEDS_TABLE.'
             INNER JOIN gwdp_users ON gwdp_users.u_id = gwdp_orders.u_id
-            ORDER BY o_id ASC
+            INNER JOIN gwdp_order_detail ON gwdp_order_detail.o_id = gwdp_orders.o_id
+            GROUP BY gwdp_orders.o_id
+            ORDER BY gwdp_orders.o_id ASC
         ');
 
         // Passage de $limit en entier
@@ -94,7 +97,7 @@ class OrdersRepository
         $oPdo = PDOConnection::get();
         $query = $oPdo -> prepare('
             SELECT
-                o_id as orderId,
+                gwdp_orders.o_id as orderId,
                 gwdp_orders.u_id as user,
                 o_flags as flags,
                 o_date as dateOrder,
@@ -111,10 +114,13 @@ class OrdersRepository
                 u_password AS password,
                 u_role AS role,
                 u_date AS date,
-                u_date_connect AS dateconnect
+                u_date_connect AS dateconnect,
+                SUM(d_price) AS total
             FROM '. OrdersRepository::DB_WEDS_TABLE.'
             INNER JOIN gwdp_users ON gwdp_users.u_id = gwdp_orders.u_id
-            ORDER BY o_id ASC
+            INNER JOIN gwdp_order_detail ON gwdp_order_detail.o_id = gwdp_orders.o_id
+            GROUP BY gwdp_orders.o_id
+            ORDER BY gwdp_orders.o_id ASC
         ');
         
         $query -> execute([':id' => $id]);

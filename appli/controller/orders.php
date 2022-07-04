@@ -1,8 +1,12 @@
 <?php
 
+use \appli\repository\OrdersRepository;
+use \appli\repository\OrdersDetailsRepository;
+
+$oOrdersRepository = new OrdersRepository;
+$aOrders = $oOrdersRepository->getOrders();
 
 //Chargement de la vue 
-$sTitle = 'Orders';
+$sTitle = 'Mes Commandes';
 $sContent = 'orders';
-$content = 'mes commandes';
 include_once VIEWS_DIR . '/template.phtml';

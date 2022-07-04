@@ -1,1 +1,47 @@
-/* No CSS *//*# sourceMappingURL=orders.css.map */
+.orders {
+  text-align: center;
+}
+
+.orders th, .orders td {
+  border: 1px solid black;
+}
+
+.orders th {
+  background-color: #005137;
+}
+
+.ordersLast {
+  width: 100%;
+}
+
+.ordersLastContainerDetails {
+  cursor: pointer;
+  color: blue;
+}
+
+.ordersLastContainer td {
+  background-color: rgba(128, 128, 128, 0.6);
+}
+
+.ordersLastDetails {
+  display: none;
+}
+
+.ordersLastDetails.active {
+  display: table-cell;
+}
+
+.ordersLastDetailsContainer {
+  margin: 20px 10vw;
+}
+
+.ordersLastDetailsContainerList {
+  width: 100%;
+}
+
+.test {
+  background-color: red;
+  height: 500px;
+  width: 100%;
+}
+/*# sourceMappingURL=orders.css.map */
