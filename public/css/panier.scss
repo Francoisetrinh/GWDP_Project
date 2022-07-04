@@ -2,4 +2,16 @@
     display: flex;
     flex-direction: column;
     
+    &List{
+        &Item{
+            &Remove{
+                cursor: pointer;
+                color: red;
+            }
+        }
+    }
+
+    &Validate{
+        margin: 20px auto;
+    }
 }

@@ -16,15 +16,14 @@
             <!-- Mise en place des produits de la BDD  -->
             <form class="productItemForm" action="?action=product" method="POST">
                 <h2 class="productItemFormTitle">Nos robes de mariée</h2>
-                <?php foreach ($aProducts as $ProductChoiceItem) { ?>
+                <?php foreach ($aProducts as $oProduct) { ?>
                     <div class="productItemFormContainer">
-                        <label for="princess"></label>
-                        <img class="productItemFormImage" 
-                        src="<?php echo htmlspecialchars(DIR_PROD_IMG. '/' . $ProductChoiceItem->getImage())?>" 
-                        alt="<?php echo htmlspecialchars($ProductChoiceItem->getDescription())?>">
-                        <a></a><br>
-                        <h4 class="productItemFormImageTitle"><?php echo htmlspecialchars($ProductChoiceItem->getTitle())?></h4>
-                        <!-- <input class="productItemFormButtonText" type="text" placeholder="princesse" name="princess" required>-->
+                        <img class="productItemFormContainerImage" 
+                        src="<?php echo htmlspecialchars(DIR_PROD_IMG. '/' . $oProduct->getImage())?>" 
+                        alt="<?php echo htmlspecialchars($oProduct->getDescription())?>">
+                        <h4 class="productItemFormContainerTitle"><?php echo htmlspecialchars($oProduct->getTitle())?></h4>
+                        <p class="productItemFormContainerPrice"><?php echo $oProduct->getPrice() ?> €</p>
+                        <a class="productItemFormContainerLink" href="?action=product_description&id=<?php echo $oProduct->getId() ?>">Voir +</a>
                     </div>
                 <?php } ?>
             </form>   

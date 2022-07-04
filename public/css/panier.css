@@ -7,4 +7,13 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
+.cartProductsListItemRemove {
+  cursor: pointer;
+  color: red;
+}
+
+.cartProductsValidate {
+  margin: 20px auto;
+}
 /*# sourceMappingURL=panier.css.map */

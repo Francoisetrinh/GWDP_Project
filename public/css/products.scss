@@ -30,30 +30,51 @@
         display: flex;
         flex-wrap: wrap;
        &Form{
-        display: flex;
-        flex-wrap: wrap;
-        align-content: space-around;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: space-around;
+        
             &Title{
                 font-family: 'Calligraffitti', cursive;
                 width: 100%;
                 margin-top: 50px;
             }
-            &Image{
-                width: 250px;
-                height: 250px;
-                object-fit: scale-down;
-                margin: 10px;
+
+            &Container{
                 &Title{
-                    font-size: 1em;
+                    font-family: 'Calligraffitti', cursive;
+                    width: 100%;
+                    margin-top: 50px;
                     text-align: center;
                 }
+                &Image{
+                    width: 250px;
+                    height: 250px;
+                    object-fit: scale-down;
+                    margin: 10px;
+                    &Title{
+                        font-size: 1em;
+                        text-align: center;
+                    }
+                }
+
+                &Price{
+                    text-align: center;
+                }
+
+                &Link {
+                    text-align: center;
+                    margin: auto;
+                    display: block;
+                }
+                
+                // &Button{
+                //     width: 100%;
+                //     margin-top: 10px;
+                //     margin-bottom: 10px;
+                // }
             }
-            
-            // &Button{
-            //     width: 100%;
-            //     margin-top: 10px;
-            //     margin-bottom: 10px;
-            // }
         }
     }
 }

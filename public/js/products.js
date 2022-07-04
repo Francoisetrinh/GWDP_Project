@@ -16,7 +16,7 @@ elementSearch.addEventListener('input', (e)=>{
             response.forEach(data => {
                 let elementA=document.createElement('a')
                 elementA.innerText=data.title
-                elementA.href='index.php?action=product_details&id='+data.id
+                elementA.href='index.php?action=product_description&id='+data.id
                 elementResult.appendChild(elementA)
             });
         }
