@@ -18,7 +18,7 @@ if (!empty($_POST))
 
         // Vérification des identifiants.
         $oPdo = PDOConnection::get();
-        var_dump($email);
+        // var_dump($email);
         $oUser = UserRepository::getUserByLoginOrEmail($email);
         // $requestsql = 'SELECT * FROM gwdp_users WHERE u_email = ?';
         // $query = $oPdo -> prepare($requestsql);
