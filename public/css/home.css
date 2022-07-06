@@ -85,6 +85,11 @@ main h1 {
   margin: 0px;
 }
 
+main p {
+  text-align: center;
+  font-family: Quattrocento;
+}
+
 /******  HOMEPAGE CARD PRODUCTS *****/
 .viewContainer {
   display: -webkit-box;

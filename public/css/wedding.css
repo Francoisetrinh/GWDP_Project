@@ -64,6 +64,11 @@ main h1 {
   font-family: 'Calligraffitti', cursive;
 }
 
+main p {
+  text-align: center;
+  font-family: Quattrocento;
+}
+
 main .avatar {
   width: 150px;
   height: 150px;
