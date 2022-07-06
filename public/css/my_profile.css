@@ -56,13 +56,16 @@ section {
 }
 
 section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   background-color: #aacac2;
   border: #8f3744 solid 3px;
   margin: 20px 20px;
   padding: 15px;
   width: 750px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

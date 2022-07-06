@@ -64,7 +64,7 @@ main h1 {
   font-family: 'Calligraffitti', cursive;
 }
 
-main p {
+main .description {
   text-align: center;
   font-family: Quattrocento;
 }

@@ -31,6 +31,8 @@ main{
 section {
     display: flex;
     form{
+        display:flex;
+        flex-wrap: wrap;
         background-color: rgb(170, 202, 194);
         border: rgb(143, 55, 68) solid 3px;
         margin: 20px 20px;

@@ -85,7 +85,7 @@ main h1 {
   margin: 0px;
 }
 
-main p {
+main .description {
   text-align: center;
   font-family: Quattrocento;
 }
